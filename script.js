@@ -64,4 +64,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 點擊背景遮罩也可以關閉
     overlay.addEventListener('click', closeModal);
+
+    // 按 ESC 鍵也可以關閉
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && overlay.classList.contains('active')) {
+            closeModal();
+        }
+    });
 });
